@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import anime from "animejs";
 
 const Header = () => {
@@ -99,37 +100,29 @@ const Header = () => {
     <nav className="navbar navbar-expand-sm fixed-top justify-content-center">
       <div id="navContainer" className="container-fluid justify-content-center">
         <ul id="navList" className="navbar-nav align-items-center">
-          <li id="logoListItem" className="nav-item">
-            <a className="navbar-brand">
-              <img id="logo" src="../../assets/images/Logo.png" alt="Logo" />
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link active fs-4" href="#">
-              Dogs
-              <i className="fa-solid fa-dog navIcon"></i>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link active fs-4" href="#">
-              Cats
-              <i className="fa-solid fa-cat navIcon"></i>
-            </a>
-          </li>
+          <Link to={"/"} id="logoListItem" className="nav-item navbar-brand">
+            <img id="logo" src="../../assets/images/Logo.png" alt="Logo" />
+          </Link>
 
-          <li className="nav-item">
-            <a className="nav-link active fs-4" href="#">
-              Contact
-              <i className="fa-solid fa-address-book navIcon"></i>
-            </a>
-          </li>
+          <Link to={"/dog"} className="nav-item nav-link active fs-4">
+            Dogs
+            <i className="fa-solid fa-dog navIcon"></i>
+          </Link>
 
-          <li className="nav-item">
-            <a className="nav-link active fs-4" href="#">
-              About Us
-              <i className="fa-solid fa-circle-info navIcon"></i>
-            </a>
-          </li>
+          <Link to={"/cat"} className="nav-item nav-link active fs-4">
+            Cats
+            <i className="fa-solid fa-cat navIcon"></i>
+          </Link>
+
+          <Link to={"/contact"} className="nav-item nav-link active fs-4">
+            Contact
+            <i className="fa-solid fa-address-book navIcon"></i>
+          </Link>
+
+          <Link to={"/aboutUs"} className="nav-item nav-link active fs-4">
+            About Us
+            <i className="fa-solid fa-circle-info navIcon"></i>
+          </Link>
         </ul>
       </div>
     </nav>

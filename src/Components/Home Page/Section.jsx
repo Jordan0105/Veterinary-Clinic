@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "./Image";
 import Text from "./Text";
 import anime from "animejs";
@@ -63,7 +63,7 @@ const Section = () => {
             },
           });
 
-          //TODO: Create  a loading screen
+          // TODO: Create  a loading screen
         }}
         onSlideChange={(swiper) => {
           //* This shows the previous slide
@@ -90,16 +90,28 @@ const Section = () => {
             duration: 1,
           });
 
-          if (swiper.activeIndex === 3 || swiper.activeIndex === 4) {
-            // console.log(slicedArray);
+          if (swiper.activeIndex === 3) {
             slicedArray.pop();
+
             anime({
-              targets: [slicedArray, ".list-group-item .textSliderSection"],
+              targets: [slicedArray, ".list-group-item .servicesBox"],
               translateX: "20vw",
               loop: false,
               duration: 1000, //200
               delay: function (el, i, l) {
-                return (i + 1) * 500;
+                return i * 100;
+              },
+              // delay: anime.stagger(300, { easing: "easeOutQuad" }),
+            });
+          } else if (swiper.activeIndex === 4) {
+            slicedArray.pop();
+            anime({
+              targets: [slicedArray, ".list-group-item .specialistBox"],
+              translateX: "20vw",
+              loop: false,
+              duration: 1000, //200
+              delay: function (el, i, l) {
+                return i * 100;
               },
               // delay: anime.stagger(300, { easing: "easeOutQuad" }),
             });
@@ -229,19 +241,21 @@ const Section = () => {
             <br />
             <ul className="list-group container-sm">
               <li className="list-group-item">
-                <h1 className="textSliderSection">Food</h1>
+                <h1 className="textSliderSection servicesBox">Food</h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Medicine Supply</h1>
+                <h1 className="textSliderSection servicesBox">
+                  Medicine Supply
+                </h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Toys</h1>
+                <h1 className="textSliderSection servicesBox">Toys</h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Surgeries</h1>
+                <h1 className="textSliderSection servicesBox">Surgeries</h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Diagnoses</h1>
+                <h1 className="textSliderSection servicesBox">Diagnoses</h1>
               </li>
             </ul>
           </Text>
@@ -264,22 +278,26 @@ const Section = () => {
 
             <ul className="list-group container-sm">
               <li className="list-group-item">
-                <h1 className="textSliderSection">Pharmacology</h1>
+                <h1 className="textSliderSection specialistBox">
+                  Pharmacology
+                </h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Nutriology</h1>
+                <h1 className="textSliderSection specialistBox">Nutriology</h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Surgery</h1>
+                <h1 className="textSliderSection specialistBox">Surgery</h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Radiology</h1>
+                <h1 className="textSliderSection specialistBox">Radiology</h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">Microbiology</h1>
+                <h1 className="textSliderSection specialistBox">
+                  Microbiology
+                </h1>
               </li>
               <li className="list-group-item">
-                <h1 className="textSliderSection">& more</h1>
+                <h1 className="textSliderSection specialistBox">& more</h1>
               </li>
             </ul>
           </Text>

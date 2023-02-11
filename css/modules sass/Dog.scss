@@ -1,0 +1,45 @@
+
+.col{
+    margin: 1rem 0;
+    width: 100%;
+    height: auto;
+    max-width: 418px;
+    max-height: 440px;
+  
+}
+
+// .row{
+//     justify-content: center;
+// }
+.card{
+    // // width: 90%;
+    margin: 1rem 0;
+    width: 100%;
+    height: auto;
+    max-width: 442px;
+    max-height: 442px;
+    transform: scale(0.1);
+    overflow: hidden;
+ 
+    
+}
+// .col-lg{
+//     display: flex;
+//     justify-content: center;
+// }
+
+.card-img-top{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    // max-height: ;
+}
+.bullDog, .chowChow{
+    width: auto;
+    max-height: 293px;
+    // height: 45%;
+
+} 
+
+
+//TODO: Create a media query for the images between 1492 and 990
