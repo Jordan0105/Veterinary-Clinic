@@ -24,6 +24,11 @@
 
 @import "./modules sass/Text.scss";
 @import "./modules sass/AboutUS.scss";
+@import "./modules sass/ContactUS";
 @import "./modules sass/Dog.scss";
 
-  
+  .App{
+    min-width: 320px;
+    padding: 0;
+    margin: 0;
+  }

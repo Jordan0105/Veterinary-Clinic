@@ -529,6 +529,90 @@ body {
   --bs-list-group-border-width: 3px;
 }
 
+#logoContactUs {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+#contactUsContainer {
+  height: 100%;
+}
+
+.form-control {
+  border-width: 2px 4px 4px;
+  border-bottom: 4px solid black;
+  font-size: 20px;
+  font-style: italic;
+}
+
+#email {
+  text-transform: lowercase;
+}
+
+#name {
+  text-transform: capitalize;
+}
+
+#formContact {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 450px;
+  min-width: 265px;
+}
+
+.form-control:focus-within {
+  box-shadow: none;
+  border-color: black;
+}
+
+#submitForm {
+  display: block;
+  width: 50%;
+  max-width: 180px;
+  min-width: 125px;
+  margin: 0 auto;
+  font-size: clamp(18px, 3.5vw, 20px);
+}
+
+#logoCol {
+  min-width: 265px;
+}
+
+address {
+  width: 100%;
+  text-align: center;
+  min-width: 265px;
+  text-align: left;
+}
+
+.infoContactUs {
+  font-weight: bold;
+}
+.infoContactUs a {
+  text-decoration: none;
+  font-style: italic;
+}
+
+#logoList li {
+  display: flex;
+  justify-content: center;
+}
+#logoList li a {
+  display: flex;
+  justify-content: center;
+}
+#logoList li a img {
+  width: 40%;
+  max-width: 100px;
+  min-width: 32px;
+  margin: 0 10px;
+  height: auto;
+}
+
 .col {
   margin: 1rem 0;
   width: 100%;
@@ -556,6 +640,12 @@ body {
 .bullDog, .chowChow {
   width: auto;
   max-height: 293px;
+}
+
+.App {
+  min-width: 320px;
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

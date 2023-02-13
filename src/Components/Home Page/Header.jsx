@@ -1,8 +1,187 @@
 import React, { useEffect } from "react";
+// import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import anime from "animejs";
 
 const Header = () => {
+  // const location = useLocation();
+  let arrayLinks = [
+    <Link
+      to={"/"}
+      key="1"
+      id="logoListItem"
+      className="nav-item navbar-brand"
+      // onClick={sayHi}
+    >
+      <img id="logo" src="../../assets/images/Logo.png" alt="Logo" />
+    </Link>,
+    <Link
+      to={"/dog"}
+      key="2"
+      className="nav-item nav-link active fs-4"
+      // onClick={sayHi}
+    >
+      Dogs
+      <i className="fa-solid fa-dog navIcon" />
+    </Link>,
+    <Link
+      to={"/cat"}
+      key="3"
+      className="nav-item nav-link active fs-4"
+      // onClick={sayHi}
+    >
+      Cats
+      <i className="fa-solid fa-cat navIcon" />
+    </Link>,
+    <Link
+      to={"/contact"}
+      key="4"
+      className="nav-item nav-link active fs-4"
+      // onClick={sayHi}
+    >
+      Contact
+      <i className="fa-solid fa-address-book navIcon" />
+    </Link>,
+    <Link
+      to={"/aboutUs"}
+      key="5"
+      className="nav-item nav-link active fs-4"
+      // onClick={sayHi}
+    >
+      About Us
+      <i className="fa-solid fa-circle-info navIcon" />
+    </Link>,
+  ];
+
+  // function sayHi() {
+  //   // setTimeout(() => {
+  //   const newPath = location.pathname.toLowerCase();
+  //   console.log(newPath);
+  //   switch (newPath) {
+  //     case "/":
+  //       arrayLinks = [
+  //         <Link
+  //           to={"/"}
+  //           key="1"
+  //           id="logoListItem"
+  //           className="nav-item navbar-brand"
+  //           onClick={sayHi}
+  //         >
+  //           <img id="logo" src="../../assets/images/Logo.png" alt="Logo" />
+  //         </Link>,
+  //         <Link
+  //           to={"/dog"}
+  //           key="2"
+  //           className="nav-item nav-link active fs-4"
+  //           onClick={sayHi}
+  //         >
+  //           Dogs
+  //           <i className="fa-solid fa-dog navIcon" />
+  //         </Link>,
+  //         <Link
+  //           to={"/cat"}
+  //           key="3"
+  //           className="nav-item nav-link active fs-4"
+  //           onClick={sayHi}
+  //         >
+  //           Cats
+  //           <i className="fa-solid fa-cat navIcon" />
+  //         </Link>,
+  //         <Link
+  //           to={"/contact"}
+  //           key="4"
+  //           className="nav-item nav-link active fs-4"
+  //           onClick={sayHi}
+  //         >
+  //           Contact
+  //           <i className="fa-solid fa-address-book navIcon" />
+  //         </Link>,
+  //         <Link
+  //           to={"/aboutUs"}
+  //           key="5"
+  //           className="nav-item nav-link active fs-4"
+  //           onClick={sayHi}
+  //         >
+  //           About Us
+  //           <i className="fa-solid fa-circle-info navIcon" />
+  //         </Link>,
+  //       ];
+  //       break;
+  //     case "/dog":
+  //       arrayLinks[1] = (
+  //         <Link
+  //           to={"/"}
+  //           key="2"
+  //           className="nav-item nav-link active fs-4"
+  //           onClick={sayHi}
+  //         >
+  //           Home
+  //           <i className="fa-solid fa-home navIcon" />
+  //         </Link>
+  //       );
+  //       // arrayLinks = [
+  //       //   <Link
+  //       //     to={"/"}
+  //       //     key="1"
+  //       //     id="logoListItem"
+  //       //     className="nav-item navbar-brand"
+  //       //     onClick={sayHi}
+  //       //   >
+  //       //     <img id="logo" src="../../assets/images/Logo.png" alt="Logo" />
+  //       //   </Link>,
+  //       //   <Link
+  //       //     to={"/"}
+  //       //     key="2"
+  //       //     className="nav-item nav-link active fs-4"
+  //       //     onClick={sayHi}
+  //       //   >
+  //       //     Home
+  //       //     <i className="fa-solid fa-home navIcon" />
+  //       //   </Link>,
+  //       //   <Link
+  //       //     to={"/cat"}
+  //       //     key="3"
+  //       //     className="nav-item nav-link active fs-4"
+  //       //     onClick={sayHi}
+  //       //   >
+  //       //     Cats
+  //       //     <i className="fa-solid fa-cat navIcon" />
+  //       //   </Link>,
+  //       //   <Link
+  //       //     to={"/contact"}
+  //       //     key="4"
+  //       //     className="nav-item nav-link active fs-4"
+  //       //     onClick={sayHi}
+  //       //   >
+  //       //     Contact
+  //       //     <i className="fa-solid fa-address-book navIcon" />
+  //       //   </Link>,
+  //       //   <Link
+  //       //     to={"/aboutUs"}
+  //       //     key="5"
+  //       //     className="nav-item nav-link active fs-4"
+  //       //     onClick={sayHi}
+  //       //   >
+  //       //     About Us
+  //       //     <i className="fa-solid fa-circle-info navIcon" />
+  //       //   </Link>,
+  //       // ];
+  //       break;
+  //     case "/cat":
+  //       console.log("cat");
+  //       break;
+  //     case "/contact":
+  //       console.log("contact");
+  //       break;
+  //     case "/aboutus":
+  //       console.log("aboutus");
+  //       break;
+  //     default:
+  //       console.log("Not found");
+  //   }
+  //   // }, 1);
+  // }
   useEffect(() => {
     //Logo Animation
     const logoAnimation = anime({
@@ -100,33 +279,15 @@ const Header = () => {
     <nav className="navbar navbar-expand-sm fixed-top justify-content-center">
       <div id="navContainer" className="container-fluid justify-content-center">
         <ul id="navList" className="navbar-nav align-items-center">
-          <Link to={"/"} id="logoListItem" className="nav-item navbar-brand">
-            <img id="logo" src="../../assets/images/Logo.png" alt="Logo" />
-          </Link>
-
-          <Link to={"/dog"} className="nav-item nav-link active fs-4">
-            Dogs
-            <i className="fa-solid fa-dog navIcon"></i>
-          </Link>
-
-          <Link to={"/cat"} className="nav-item nav-link active fs-4">
-            Cats
-            <i className="fa-solid fa-cat navIcon"></i>
-          </Link>
-
-          <Link to={"/contact"} className="nav-item nav-link active fs-4">
-            Contact
-            <i className="fa-solid fa-address-book navIcon"></i>
-          </Link>
-
-          <Link to={"/aboutUs"} className="nav-item nav-link active fs-4">
-            About Us
-            <i className="fa-solid fa-circle-info navIcon"></i>
-          </Link>
+          {arrayLinks.map((link) => link)}
         </ul>
       </div>
     </nav>
   );
 };
+
+// Header.propTypes = {
+//   arrayLinks: PropTypes.array.isRequired,
+// };
 
 export default Header;

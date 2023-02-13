@@ -1,21 +1,37 @@
 import React, { useEffect } from "react";
 import Header from "../Home Page/Header";
 import anime from "animejs";
+// import { arrayLinks } from "../Home Page/Home";
+// import { Link } from "react-router-dom";
 
 const Dog = () => {
+  //TODO: Insert Home Icon instead of dog
+  // arrayLinks[1] = (
+  //   <Link to={"/"} key="2" className="nav-item nav-link active fs-4">
+  //     Home
+  //     <i className="fa-solid fa-house navIcon" />
+  //   </Link>
+  // );
+
   useEffect(() => {
     const cards = document.getElementsByClassName("card");
     for (const iterator of cards) {
       iterator.style.transform = "scale(0)";
     }
-
+    // arrayLinks[1] = (
+    //   <Link to={"/dog"} key="2" className="nav-item nav-link active fs-4">
+    //     Dogs
+    //     <i className="fa-solid fa-dog navIcon" />
+    //   </Link>
+    // );
     anime({
       targets: ".card ",
       scale: [{ value: 1, easing: "easeInOutQuad", duration: 1200 }],
       delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
     });
     return () => {
-      // console.log(cards);
+      console.log("Dog desmontado");
+      // console.log(arrayLinks[1].props.children[1].props.className);
     };
   }, []);
 
