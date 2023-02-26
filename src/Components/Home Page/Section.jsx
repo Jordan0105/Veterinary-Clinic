@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "./Image";
 import Text from "./Text";
 import anime from "animejs";
@@ -42,15 +42,22 @@ const Section = () => {
   return (
     <>
       <Swiper
-        onInit={() => {
-          //Start the animation of the first slider initialized
+        //* Start the animation of the first slider initialized
 
+        onInit={(swiper) => {
           anime({
             targets: "#firstInit",
             translateX: "20vw",
             loop: false,
             duration: 1000, //200
             delay: 2000,
+
+            //* You can't scroll until the text animations is finished
+
+            begin: () => {
+              swiper.mousewheel.disable();
+              swiper.pagination.disable();
+            },
           });
 
           anime({
@@ -58,30 +65,61 @@ const Section = () => {
             translateX: "20vw",
             loop: false,
             duration: 1000, //200
+
             delay: function (el, i, l) {
               return (i + 10) * 300;
+            },
+
+            //* When the animation is completed you can scroll again
+
+            complete: () => {
+              swiper.mousewheel.enable();
+              swiper.pagination.enable();
+              swiper.allowTouchMove = true;
+
+              //* Bullets animation
+
+              anime({
+                targets: ".swiper-pagination-bullet",
+                opacity: [0, 1],
+                duration: 3000,
+              });
             },
           });
 
           // TODO: Create  a loading screen
         }}
-        onSlideChange={(swiper) => {
-          //* This shows the previous slide
+        //* When you are on the first slide for the first time
 
+        onTransitionStart={(swiper) => {
+          swiper.mousewheel.disable();
+          swiper.pagination.disable();
+        }}
+        //* Every time when the slide changes
+
+        onSlideChange={(swiper) => {
+          //* This gets the previous slide
+          console.clear();
+          swiper.allowTouchMove = false;
           const previousSlide = document.getElementsByClassName(
             "swiper-slide-active"
           )[0].childNodes[1].childNodes;
 
-          //*This shows the currently slider
+          //* Get the text of the current slide
 
           const firstTextCurrentSlide =
             swiper.slides[swiper.activeIndex].childNodes[1].childNodes[0];
 
+          //* Get the text of the next slide
+
           const nextTextCurrentSlide = Array.from(
             swiper.slides[swiper.activeIndex].childNodes[1].childNodes
           );
+
+          //* Delete the first text of every slide
+
           const slicedArray = nextTextCurrentSlide.slice(1);
-          // Bug: The animation got
+          //* Animate the text
 
           anime({
             targets: [previousSlide, ".list-group-item .textSliderSection"],
@@ -89,6 +127,8 @@ const Section = () => {
             loop: false,
             duration: 1,
           });
+
+          //* If we are on the 3 slide then we delete the first text and we take only the text inside the table
 
           if (swiper.activeIndex === 3) {
             slicedArray.pop();
@@ -101,40 +141,79 @@ const Section = () => {
               delay: function (el, i, l) {
                 return i * 100;
               },
-              // delay: anime.stagger(300, { easing: "easeOutQuad" }),
-            });
-          } else if (swiper.activeIndex === 4) {
-            slicedArray.pop();
-            anime({
-              targets: [slicedArray, ".list-group-item .specialistBox"],
-              translateX: "20vw",
-              loop: false,
-              duration: 1000, //200
-              delay: function (el, i, l) {
-                return i * 100;
-              },
-              // delay: anime.stagger(300, { easing: "easeOutQuad" }),
-            });
-          } else {
-            anime({
-              targets: slicedArray,
-              translateX: "20vw",
-              loop: false,
-              duration: 1000, //200
-              delay: function (el, i, l) {
-                return (i + 1) * 500;
+              complete: () => {
+                swiper.mousewheel.enable();
+                swiper.pagination.enable();
+                swiper.allowTouchMove = true;
+
+                //* Bullets animation
+
+                anime({
+                  targets: ".swiper-pagination-bullet",
+                  opacity: [0, 1],
+                  duration: 3000,
+                });
               },
               // delay: anime.stagger(300, { easing: "easeOutQuad" }),
             });
           }
 
-          // anime({
-          //   targets: ["#firstInit", ".firstInitialized"],
-          //   translateX: "0vw",
-          //   loop: false,
-          //   duration: 1, //200
-          // });
+          //* If we are on the 3 slide then we delete the first text and we take only the text inside the table
+          else if (swiper.activeIndex === 4) {
+            slicedArray.pop();
 
+            anime({
+              targets: [slicedArray, ".list-group-item .specialistBox"],
+              translateX: "20vw",
+              loop: false,
+              duration: 1000, //200
+
+              delay: function (el, i, l) {
+                return i * 100;
+              },
+
+              complete: function () {
+                swiper.mousewheel.enable();
+                swiper.pagination.enable();
+                swiper.allowTouchMove = true;
+
+                //* Bullets animation
+
+                anime({
+                  targets: ".swiper-pagination-bullet",
+                  opacity: [0, 1],
+                  duration: 3000,
+                });
+              },
+            });
+          }
+
+          //* If we are on the rest of slides (no table)
+          else {
+            anime({
+              targets: slicedArray,
+              translateX: "20vw",
+              loop: false,
+              duration: 3000, //200
+
+              delay: function (el, i, l) {
+                return (i + 1) * 500;
+              },
+              complete: function () {
+                swiper.mousewheel.enable();
+                swiper.pagination.enable();
+                swiper.allowTouchMove = true;
+
+                //* Bullets animation
+
+                anime({
+                  targets: ".swiper-pagination-bullet",
+                  opacity: [0, 1],
+                  duration: 3000,
+                });
+              },
+            });
+          }
           anime({
             targets: firstTextCurrentSlide,
             translateX: "20vw",
@@ -144,12 +223,11 @@ const Section = () => {
           });
         }}
         direction={"vertical"}
+        allowTouchMove={false}
         slidesPerView={1}
         spaceBetween={0}
         mousewheel={true}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={{ clickable: true }}
         modules={[Mousewheel, Pagination]}
         className="mySwiper"
       >

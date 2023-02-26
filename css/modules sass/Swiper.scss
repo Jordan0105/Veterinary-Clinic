@@ -1,12 +1,11 @@
-
 @import "../../node_modules/swiper/swiper.scss";
 @import "../../node_modules/swiper/modules/pagination/pagination.scss";
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
 
 #app {
   height: 100%;
 }
+
 html,
 body {
   position: relative;
@@ -22,7 +21,7 @@ body {
   padding: 0;
 }
 
-#homeContainer{
+#homeContainer {
   height: 100vh;
   overflow: hidden;
 }
@@ -34,7 +33,6 @@ body {
 }
 
 .swiper-slide {
-
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -51,12 +49,18 @@ body {
   height: 100vh;
   object-fit: cover;
 }
+
 //TODO: Change the bullet color
 
-.swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+.swiper-vertical > .swiper-pagination-bullets,
+.swiper-pagination-vertical.swiper-pagination-bullets {
   right: var(--swiper-pagination-right, 8px);
   left: var(--swiper-pagination-left, auto);
   top: 50vh;
   transform: translate3d(0px, -50%, 0);
 }
 
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+}
