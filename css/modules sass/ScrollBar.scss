@@ -1,0 +1,20 @@
+
+.moreInfoCardAnimal::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #212529;
+}
+
+.moreInfoCardAnimal::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #ff040400;
+}
+
+.moreInfoCardAnimal::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ffffff;
+}
