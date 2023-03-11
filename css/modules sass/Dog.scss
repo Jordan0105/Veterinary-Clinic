@@ -1,45 +1,104 @@
+@font-face {
+  font-family: "Grotesque";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.eot"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.ttf"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Grotesque Black";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.eot"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.ttf"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.woff");
+  font-weight: bold;
+}
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import "./ScrollBar.scss";
 
-.col{
-    margin: 1rem 0;
-    width: 100%;
-    height: auto;
-    max-width: 418px;
-    max-height: 440px;
-  
+.col {
+  margin: 1rem 0;
+  width: 100%;
+  height: auto;
+  max-width: 418px;
+  max-height: 440px;
 }
 
-// .row{
-//     justify-content: center;
-// }
-.card{
-    // // width: 90%;
-    margin: 1rem 0;
-    width: 100%;
-    height: auto;
-    max-width: 442px;
-    max-height: 442px;
-    transform: scale(0.1);
-    overflow: hidden;
- 
-    
+.card {
+  width: 100%;
+  max-width: 442px;
+  max-height: 442px;
+  transform: scale(0.1);
 }
-// .col-lg{
-//     display: flex;
-//     justify-content: center;
-// }
 
-.card-img-top{
-    max-width: 100%;
-    height: auto;
-    display: block;
-    // max-height: ;
+
+.card-img-top {
+  max-width: 100%;
+  max-height: 293px;
 }
-.bullDog, .chowChow{
-    width: auto;
-    max-height: 293px;
-    // height: 45%;
 
-} 
+.bigImagesCover {
+  object-fit: cover;
+  height: 100%;
+}
 
+//Bug::after
+
+.moreInfoCardAnimal {
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  font-size: min(5vw, 20px);
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  background: #0dcaf05e;
+  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+
+.titleCat {
+  position: relative;
+  margin: 10px 0;
+  letter-spacing: 3px;
+  color: #ffffff;
+  font-family: "Grotesque Black", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 0px #32577f;
+}
+
+.scientificName {
+  margin-bottom: 10px;
+  // text-transform: uppercase;
+  color: white;
+  font-family: "Grotesque", sans-serif;
+}
+
+.moreInfoTxtAnimal {
+  width: 100%;
+  padding: 2%;
+  background-color: #32577f;
+  font-family: "Merriweather", sans-serif;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+  font-size: min(4vw, 19px);
+
+}
+
+.card:hover .moreInfoCardAnimal {
+  transform: translateY(-100%);
+}
+
+.card:hover .moreInfoTxtAnimal {
+  opacity: 1;
+}
+
+.nameHeaderAnimal {
+  transition: 3s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+
+.card:hover .nameHeaderAnimal {
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
 
 //TODO: Create a media query for the images between 1492 and 990
