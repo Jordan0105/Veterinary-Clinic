@@ -44,7 +44,7 @@ const Section = () => {
       <Swiper
         //* Start the animation of the first slider initialized
 
-        onInit={(swiper) => {
+        onInit={swiper => {
           anime({
             targets: "#firstInit",
             translateX: "20vw",
@@ -91,13 +91,13 @@ const Section = () => {
         }}
         //* When you are on the first slide for the first time
 
-        onTransitionStart={(swiper) => {
+        onTransitionStart={swiper => {
           swiper.mousewheel.disable();
           swiper.pagination.disable();
         }}
         //* Every time when the slide changes
 
-        onSlideChange={(swiper) => {
+        onSlideChange={swiper => {
           //* This gets the previous slide
           console.clear();
           swiper.allowTouchMove = false;
@@ -237,20 +237,23 @@ const Section = () => {
             alt={ImageSrc.background1.alt}
           />
           <Text>
-            <h1 id="firstInit" className="firstTextSliderSection container-sm">
+            <h1
+              id="firstInit"
+              className="firstTextSliderSection textSliderResponsive container-sm"
+            >
               A pet is a friend
             </h1>
-            <h1 className="textSliderSection firstInitialized container-sm">
+            <h1 className="textSliderSection firstInitialized textSliderResponsive container-sm">
               Is our responsability to take
             </h1>
-            <h1 className="textSliderSection firstInitialized container-sm">
+            <h1 className="textSliderSection firstInitialized textSliderResponsive container-sm">
               the best cares for them
             </h1>
             <br />
-            <h1 className="textSliderSection firstInitialized container-sm">
+            <h1 className="textSliderSection firstInitialized textSliderResponsive container-sm">
               And you will find all that
             </h1>
-            <h1 className="textSliderSection firstInitialized container-sm">
+            <h1 className="textSliderSection firstInitialized textSliderResponsive container-sm">
               Just over here
             </h1>
           </Text>
@@ -262,20 +265,20 @@ const Section = () => {
             alt={ImageSrc.background2.alt}
           />
           <Text>
-            <h1 className="firstTextSliderSection container-sm">
+            <h1 className="firstTextSliderSection textSliderResponsive container-sm">
               A cat means a lot of things
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               They even were ancient gods{" "}
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               in the ancient Egypt!
             </h1>
             <br />
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               In Mejia&#39;s Pets we will provide
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               to your cats the best cares ever
             </h1>
           </Text>
@@ -287,20 +290,20 @@ const Section = () => {
             alt={ImageSrc.background3.alt}
           />
           <Text>
-            <h1 className="firstTextSliderSection container-sm">
+            <h1 className="firstTextSliderSection textSliderResponsive container-sm">
               A dog means a lot
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               Not only they are considered
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               the best friend on men
             </h1>
             <br />
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               They take care of us and
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               We have to take care of them
             </h1>
           </Text>
@@ -312,12 +315,12 @@ const Section = () => {
             alt={ImageSrc.background4.alt}
           />
           <Text>
-            <h1 className="firstTextSliderSection container-sm">
+            <h1 className="firstTextSliderSection textSliderResponsive container-sm">
               In Mejia&#39;s Pets you&#39;ll find <br />
             </h1>
 
             <br />
-            <ul className="list-group container-sm">
+            <ul className="list-group textSliderResponsive container-sm">
               <li className="list-group-item">
                 <h1 className="textSliderSection servicesBox">Food</h1>
               </li>
@@ -345,16 +348,18 @@ const Section = () => {
             alt={ImageSrc.background5.alt}
           />
           <Text>
-            <h1 className="firstTextSliderSection container-sm">
+            <h1 className="firstTextSliderSection textSliderResponsive container-sm">
               Your pet is in good hands...
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               with our qualified veterinarian
             </h1>
-            <h1 className="textSliderSection container-sm">specialists in:</h1>
+            <h1 className="textSliderSection textSliderResponsive container-sm">
+              specialists in:
+            </h1>
             <br />
 
-            <ul className="list-group container-sm">
+            <ul className="list-group textSliderResponsive container-sm">
               <li className="list-group-item">
                 <h1 className="textSliderSection specialistBox">
                   Pharmacology
@@ -387,25 +392,25 @@ const Section = () => {
             alt={ImageSrc.background6.alt}
           />
           <Text>
-            <h1 className="firstTextSliderSection container-sm">
+            <h1 className="firstTextSliderSection textSliderResponsive container-sm">
               With our specialists
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               you don&#39;t have to worry about
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               the health of your pet,
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               no matter how delicate
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               the problem may be,
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               we will take care and we&#39;ll handle it
             </h1>
-            <h1 className="textSliderSection container-sm">
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               in the best possible way
             </h1>
           </Text>
@@ -416,21 +421,21 @@ const Section = () => {
             alt={ImageSrc.background7.alt}
           />
           <Text>
-            <h1 className="firstTextSliderSection container-sm">
+            <h1 className="firstTextSliderSection textSliderResponsive container-sm">
               Feeding our pets is one of the <br /> most important things.
             </h1>
-            <br />
-            <h1 className="textSliderSection container-sm">
+            {/* <br /> */}
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               Their health depends on <br />
               how well they are fed.
             </h1>
-            <br />
-            <h1 className="textSliderSection container-sm">
+            {/* <br /> */}
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               Your pets deserve a <br />
               healthy and nutritious diet.
             </h1>
-            <br />
-            <h1 className="textSliderSection container-sm">
+            {/* <br /> */}
+            <h1 className="textSliderSection textSliderResponsive container-sm">
               You will find the best nutritionists <br />
               only here at:
             </h1>

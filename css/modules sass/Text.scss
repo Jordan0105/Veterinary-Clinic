@@ -1,20 +1,16 @@
 
 .animationContainer{
-
-    top: 15vh;
+    top: 2vh;
     z-index: 20;
-    width: 100vw;
-    min-width: 100vw;
-    // max-width: 52vw;
+    width: 83vw;
+    min-width: 240px;
     height: 100%;
     border: 1px solid red;
     position: absolute;
-
- 
 }
 
 .firstTextSliderSection{
-    text-indent: 20px;
+    // text-indent: 20px;
     color: white;
     font-family: Ubuntu, Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -23,46 +19,50 @@
 }
 
 .textSliderSection {
-    @extend .firstTextSliderSection
+    @extend .firstTextSliderSection;
 }
 
+.textSliderResponsive{
+    // font-size: min(5vw, 36px);
+    font-size: min(5vh, 36px);
 
-
-// //@media only screen and (max-width: 1440px) {
-//   //  .firstScreenText{
-        
-//     //    font-size: min(100vw, 35px);
-//     }
-// }
-
-
-
-
-// @media only screen and (max-width: 768px){
-//     .firstScreenText{
-        
-//         font-size: min(6vw, 16px);
-//     }
-// }
-
-// @media only screen and (max-width: 425px)  {
-//     .firstTextSliderSection{
-        
-        
-//     }
-// }
-@media (min-width: 1200px){
-
-    h1{
-    font-size: 2.2rem;
 }
+.list-group-item .textSliderSection{
+    // font-size: min(4vw, 36px);
+    font-size: min(4vh, 36px);
+}
+
+@media screen and (max-width: 575px) {
+    .textSliderResponsive{
+        // font-size: min(5vw, 36px);
+        font-size: min(3.2vh, 36px);
     
+    }
+    .list-group-item .textSliderSection{
+        // font-size: min(4vw, 36px);
+        font-size: min(3vh, 36px);
+    }
 }
 .list-group-item{
-
     --bs-list-group-color: white;
     --bs-list-group-bg: transparent;
     --bs-list-group-border-color: rgba(255, 255, 255, 0.514);
     --bs-list-group-border-width: 3px;
+    width: 130%;
+    max-width: 59rem;
+    padding: min(0px, 14px);
 }
-// //TODO: the fucking text is not working fine
+
+
+
+
+
+
+
+
+.swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+    right: var(--swiper-pagination-right, 8px);
+    left: var(--swiper-pagination-left, auto);
+    top: 27vh;
+    transform: translate3d(0px, -50%, 0);
+}
