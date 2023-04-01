@@ -18,17 +18,20 @@ const Contact = () => {
   return (
     <>
       <Header />
-      <div id="contactUsContainer" className="container-fluid p-5 ">
+      <div id="contactUsContainer" className="container-fluid p-5 bg-dark">
         <div className="row">
           <div className="col-lg d-flex justify-content-center align-items-center">
-            <img id="logoContactUs" src="../../../assets/images/Logo.png" />
+            <img
+              alt="Logo"
+              id="logoContactUs"
+              src="../../../assets/images/Logo.png"
+            />
           </div>
-          <div className="col-lg d-flex justify-content-center flex-column align-items-center">
+          <div className="col-lg d-flex justify-content-center flex-column align-items-center text-light">
             <h1>Contact Us</h1>
             <form id="formContact" action="">
-              {/* className="border border-3 p-5" */}
               <div className="mb-3 mt-3">
-                <label htmlFor="fullName" className="form-label h4">
+                <label htmlFor="fullName" className=" form-label h4 text-light">
                   Full Name
                 </label>
                 <input
@@ -40,7 +43,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label h4">
+                <label htmlFor="email" className=" form-label h4 text-light">
                   Email:
                 </label>
                 <input
@@ -52,7 +55,10 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="messsageText" className="form-label h4">
+                <label
+                  htmlFor="messsageText"
+                  className=" form-label h4 text-light"
+                >
                   Message
                 </label>
                 <input
@@ -76,17 +82,17 @@ const Contact = () => {
         <div className="row pt-5">
           <div className="col-lg d-flex justify-content-center flex-column align-items-center px-0">
             <address>
-              <h3 className="infoContactUs">
+              <h3 className="infoContactUs text-light">
                 Email:{" "}
                 <a href="mailto:mejiaspets@gmail.com">mejiaspets@gmail.com</a>
               </h3>
-              <h3 className="infoContactUs">
+              <h3 className="infoContactUs text-light">
                 Address: 957 Bryan Avenue, Saint Paul, Minnesota.
               </h3>
-              <h3 className="infoContactUs">
+              <h3 className="infoContactUs text-light">
                 Phone Number: <a href="tel:+1570-488-1628">570-488-1628</a>
               </h3>
-              <h3 className="infoContactUs">
+              <h3 className="infoContactUs text-light">
                 Fax: <a href="fax:+1 (806) 905-6421">1 (806) 905-6421</a>
               </h3>
             </address>
@@ -118,6 +124,7 @@ const Contact = () => {
               <li className="list-inline-item">
                 <a href="https://www.tiktok.com">
                   <img
+                    id="tikTokLogo"
                     src="../../../assets/images/Social Media/Tik Tok Logo.png"
                     alt="TikTok Logo"
                   />

@@ -1,24 +1,12 @@
-import React, { useEffect } from "react";
-import anime from "animejs";
+import React from "react";
 import Header from "../Home Page/Header";
 
 const AboutUS = () => {
-  useEffect(() => {
-    anime({
-      targets: ".img-fluid",
-      translateX: 0,
-      // scale: 2,
-      rotate: "1turn",
-      easing: "easeInOutExpo",
-      delay: 1000,
-      duration: 8000,
-    });
-  }, []);
   return (
     <>
       <Header />
 
-      <div id="aboutUsContainer" className="container-fluid p-5 ">
+      <div id="aboutUsContainer" className="container-fluid p-5 bg-dark">
         <div className="row pt-5 justify-content-center">
           <div className="col-lg w-auto d-flex justify-content-center align-items-center">
             <img
@@ -27,7 +15,7 @@ const AboutUS = () => {
               alt="Logo Mejia's Pets"
             />
           </div>
-          <div className="col-lg d-flex justify-content-center align-items-center flex-column">
+          <div className="col-lg d-flex justify-content-center align-items-center flex-column text-light">
             <div className="col d-flex justify-content-center align-items-center">
               <h1>Who we are?</h1>
             </div>
@@ -47,7 +35,7 @@ const AboutUS = () => {
               alt="Team Mejia's Pets"
             />
           </div>
-          <div className="col-lg d-flex justify-content-center align-items-center flex-column">
+          <div className="col-lg d-flex justify-content-center align-items-center flex-column text-light">
             <div className="col d-flex justify-content-center align-items-center">
               <h1>We have the best specialists from all over the country</h1>
             </div>
@@ -59,7 +47,7 @@ const AboutUS = () => {
             </div>
           </div>
         </div>
-        <div className="row pt-5">
+        <div className="row pt-5  text-light">
           <div className="col-lg d-flex justify-content-center align-items-center">
             <img
               className="img-fluid rounded "
@@ -80,7 +68,7 @@ const AboutUS = () => {
             </div>
           </div>
         </div>
-        <div className="row pt-5">
+        <div className="row pt-5  text-light">
           <div className="col-lg d-flex justify-content-center align-items-center">
             <img
               className="img-fluid rounded "
