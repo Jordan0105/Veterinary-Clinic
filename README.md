@@ -14,4 +14,4 @@ Contact Us: Here you can contact us.
 About Us: More info about us and our begin.
 
 The full README.md will be added soon
-Some error on Swiper Functions
+Some error on Swiper Functions.
